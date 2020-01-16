@@ -1,21 +1,22 @@
 <template>
-    <div>
-        <h1>
-            Vue to-do App
-        </h1>
+    <div id="app">
+
+        <h1><img style = "width: 8%; " src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"  alt="Vue Logo"  /> to-do App</h1>
         <ul v-for="todo in $data.todos.filter(shouldShowToDo)">
             <li v-bind:class="{complete: todo.done}">
                 {{todo.text}}
                 <input type="checkbox" v-model="todo.done">
             </li>
         </ul>
-        <form v-on:submit="handleAddTodo($event)">
-            <input type="text" v-model="input">
+        <form v-on:submit="handleAddTodo($event)" style="white-space:nowrap">
+            <label>New: </label> <input type="text" v-model="input">
         </form>
-        <label class="show-completed">
-            Show Completed Items?
-            <input type="checkbox" v-model="showDone">
-        </label>
+        <ul>
+            <li>
+                <label class="show-completed"> Show Completed Items?</label>
+                <input type="checkbox" v-model="showDone">
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -45,13 +46,23 @@
 
 
 <style>
+    /*Vue blue: #34495E, Vue Green: #41B883*/
     body {
         font-family: Helvetica, sans-serif;
         color: darkslategray;
         font-size: 1.4em;
-        margin: 1.4em;
-        width: 22em;
         position: relative;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #app {
+        margin: 1em auto auto auto;
+        padding: 0px 5px 0px 5px;
+        width: 22em;
+        border: 4px #41B883 solid;
     }
     input[type=text] {
         margin-top: 1em;
@@ -64,10 +75,13 @@
         right: 0;
         padding: 1em;
     }
+    input[type=text] {
+        width: 88%;
+    }
     li {
         list-style-type: none;
         padding: 1em 0 1em 0;
-        border-bottom: 1px solid lightblue;
+        border-bottom: 1px solid #34495E;
         position: relative;
     }
     li input {
