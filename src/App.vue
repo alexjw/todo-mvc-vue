@@ -8,8 +8,9 @@
                 <input type="checkbox" v-model="todo.done">
             </li>
         </ul>
-        <form v-on:submit="handleAddTodo($event)" style="white-space:nowrap">
-            <label>New: </label> <input type="text" v-model="input">
+        <form v-on:submit="handleAddTodo($event)" class="d-flex  align-items-center" id="new-form">
+            <label>New: </label>
+            <input type="text" v-model="input">
         </form>
         <ul>
             <li>
@@ -53,11 +54,9 @@
         font-size: 1.4em;
         position: relative;
     }
-
     h1 {
         text-align: center;
     }
-
     #app {
         margin: 1em auto auto auto;
         padding: 0px 5px 0px 5px;
@@ -67,16 +66,14 @@
     input[type=text] {
         margin-top: 1em;
         padding: 0.8em;
-        width: 100%;
+        width: 100em;
         font-size: 0.7em;
     }
     input[type=checkbox] {
         position: absolute;
         right: 0;
+        top: 36px;
         padding: 1em;
-    }
-    input[type=text] {
-        width: 88%;
     }
     li {
         list-style-type: none;
