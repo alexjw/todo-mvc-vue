@@ -2,8 +2,8 @@
     <div id="app">
 
         <h1><img style = "width: 8%; " src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"  alt="Vue Logo"  /> to-do App</h1>
-        <ul v-for="todo in $data.todos.filter(shouldShowToDo)">
-            <li v-bind:class="{complete: todo.done}">
+        <ul >
+            <li v-for="todo in $data.todos.filter(shouldShowToDo)" v-bind:class="{complete: todo.done}">
                 {{todo.text}}
                 <input type="checkbox" v-model="todo.done">
             </li>
@@ -76,7 +76,7 @@
     }
     li {
         list-style-type: none;
-        padding: 1em 0 1em 0;
+        padding: 24px 0 24px 0;
         border-bottom: 1px solid #34495E;
         position: relative;
     }
@@ -97,8 +97,5 @@
     .show-completed {
         font-size: 1rem;
         color: slategray;
-    }
-    .show-completed input {
-        transform: scale(1.4);
     }
 </style>
